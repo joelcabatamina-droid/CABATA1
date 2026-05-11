@@ -10,7 +10,7 @@ async function checkIP() {
   btn.classList.add('loading');
 
   try {
-    const response = await fetch('http://ip-api.com/json/?fields=status,message,country,regionName,city,isp,timezone,query');
+    const response = await fetch('https://ipapi.co/json/');
 
     if (!response.ok) {
       throw new Error('Erro na requisição');
@@ -18,15 +18,15 @@ async function checkIP() {
 
     const data = await response.json();
 
-    if (data.status === 'fail') {
-      throw new Error(data.message || 'Falha ao obter IP');
+    if (data.error) {
+      throw new Error(data.reason || 'Falha ao obter IP');
     }
 
     // Preenche os dados
-    document.getElementById('ip').textContent = data.query;
-    document.getElementById('location').textContent = `${data.city}, ${data.regionName}`;
-    document.getElementById('country').textContent = data.country;
-    document.getElementById('isp').textContent = data.isp;
+    document.getElementById('ip').textContent = data.ip;
+    document.getElementById('location').textContent = `${data.city}, ${data.region}`;
+    document.getElementById('country').textContent = data.country_name;
+    document.getElementById('isp').textContent = data.org;
     document.getElementById('timezone').textContent = data.timezone;
 
     result.classList.remove('hidden');
