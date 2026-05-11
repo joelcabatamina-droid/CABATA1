@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABATA1 - Verificador de IP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Verificador de IP</h1>
+    <p class="subtitle">Descubra informações sobre seu endereço IP</p>
+
+    <button id="checkBtn" onclick="checkIP()">Verificar Meu IP</button>
+
+    <div id="result" class="result hidden">
+      <div class="info-row">
+        <span class="label">IP:</span>
+        <span id="ip" class="value">—</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Localização:</span>
+        <span id="location" class="value">—</span>
+      </div>
+      <div class="info-row">
+        <span class="label">País:</span>
+        <span id="country" class="value">—</span>
+      </div>
+      <div class="info-row">
+        <span class="label">ISP:</span>
+        <span id="isp" class="value">—</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Fuso Horário:</span>
+        <span id="timezone" class="value">—</span>
+      </div>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
