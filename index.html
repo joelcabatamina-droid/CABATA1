@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CABATA1 - Verificador de IP</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#667eea">
 </head>
 <body>
   <div class="container">
@@ -34,9 +36,20 @@
         <span class="label">Fuso Horário:</span>
         <span id="timezone" class="value">—</span>
       </div>
+      <p class="note">⚠️ A localização é baseada no IP e pode não ser exata.</p>
     </div>
 
     <div id="error" class="error hidden"></div>
+
+    <div class="share-section">
+      <button class="share-btn" onclick="shareWhatsApp()">📱 Compartilhar no WhatsApp</button>
+    </div>
+
+    <div id="installBanner" class="install-banner hidden">
+      <p>📲 Quer instalar como app?</p>
+      <button onclick="installApp()">Instalar</button>
+      <button class="dismiss" onclick="dismissInstall()">Agora não</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

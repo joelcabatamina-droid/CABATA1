@@ -99,3 +99,48 @@ button:active {
   opacity: 0.6;
   pointer-events: none;
 }
+
+.note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+}
+
+.share-section {
+  margin-top: 24px;
+}
+
+.share-btn {
+  background: #25D366;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+}
+
+.share-btn:hover {
+  background: #1da851;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.install-banner {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.install-banner p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.install-banner button {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  margin: 0 4px;
+}
+
+.install-banner .dismiss {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

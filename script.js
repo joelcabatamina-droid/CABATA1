@@ -1,3 +1,4 @@
+// === Verificar IP ===
 async function checkIP() {
   const btn = document.getElementById('checkBtn');
   const result = document.getElementById('result');
@@ -38,4 +39,36 @@ async function checkIP() {
     btn.textContent = 'Verificar Meu IP';
     btn.classList.remove('loading');
   }
+}
+
+// === Compartilhar no WhatsApp ===
+function shareWhatsApp() {
+  const text = encodeURIComponent('🔍 Descubra informações sobre seu IP com o CABATA1!\n👉 https://joelcabatamina-droid.github.io/CABATA1/');
+  window.open(`https://wa.me/?text=${text}`, '_blank');
+}
+
+// === PWA Install ===
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installBanner').classList.remove('hidden');
+});
+
+async function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  document.getElementById('installBanner').classList.add('hidden');
+}
+
+function dismissInstall() {
+  document.getElementById('installBanner').classList.add('hidden');
+}
+
+// === Service Worker ===
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/CABATA1/sw.js');
 }
