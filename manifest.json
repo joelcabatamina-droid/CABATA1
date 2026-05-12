@@ -1,6 +1,6 @@
 {
-  "name": "CABATA1 - Verificador de IP",
-  "short_name": "CABATA1",
+  "name": "Blip IP Checker",
+  "short_name": "Blip",
   "description": "Verifique informações sobre seu endereço IP",
   "start_url": "/CABATA1/",
   "display": "standalone",

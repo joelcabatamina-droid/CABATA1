@@ -43,7 +43,7 @@ async function checkIP() {
 
 // === Compartilhar no WhatsApp ===
 function shareWhatsApp() {
-  const text = encodeURIComponent('🔍 Descubra informações sobre seu IP com o CABATA1!\n👉 https://joelcabatamina-droid.github.io/CABATA1/');
+  const text = encodeURIComponent('🔍 Descubra informações sobre seu IP com o Blip!\n👉 https://joelcabatamina-droid.github.io/CABATA1/');
   window.open(`https://wa.me/?text=${text}`, '_blank');
 }
 
