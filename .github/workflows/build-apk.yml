@@ -27,22 +27,29 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Capacitor CLI
-        run: npm install -g @capacitor/cli
-
-      - name: Initialize Capacitor project
+      - name: Install dependencies
         run: |
           npm init -y
-          npm install @capacitor/core @capacitor/cli
-          npx cap init "Blip" "com.joel.blip" --web-dir .
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+
+      - name: Create Capacitor config
+        run: |
+          cat > capacitor.config.json << 'EOF'
+          {
+            "appId": "com.joel.blip",
+            "appName": "Blip IP Checker",
+            "webDir": ".",
+            "server": {
+              "androidScheme": "https"
+            }
+          }
+          EOF
 
       - name: Add Android platform
-        run: |
-          npx cap add android
+        run: npx cap add android --web-dir .
 
-      - name: Copy web assets to Android
-        run: |
-          npx cap copy android
+      - name: Copy web assets
+        run: npx cap copy android
 
       - name: Make Gradle wrapper executable
         run: chmod +x android/gradlew
